@@ -207,3 +207,57 @@ button:hover {
   top: 0;
   transition: top 0.3s, left 0.3s;
 }
+
+/* 📱 Adaptación para pantallas pequeñas */
+@media screen and (max-width: 600px) {
+  h1, h2 {
+    font-size: 1.2em;
+    padding: 0 10px;
+  }
+
+  #contador {
+    font-size: 1em;
+  }
+
+  button, #btn-si, #btn-no {
+    font-size: 1em;
+    padding: 8px 16px;
+    max-width: 90vw;
+  }
+
+  .imagenes img {
+    width: 80vw;
+    max-width: 100%;
+    margin: 10px auto;
+  }
+
+  #puzzle-container {
+    width: 90vw;
+    height: 90vw;
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  .tarjeta {
+    width: 90vw;
+    max-width: 200px;
+    margin: 10px auto;
+  }
+
+  #mensajeMostrado {
+    font-size: 1em;
+    padding: 10px;
+  }
+
+  .botones {
+    height: 120px;
+  }
+
+  #btn-si {
+    left: 20%;
+  }
+
+  #btn-no {
+    left: 60%;
+  }
+}
