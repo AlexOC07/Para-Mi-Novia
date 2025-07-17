@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Feliz Aniversario, Mi Amor</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header>
+    <h1>💖 Feliz Aniversario Ya Es Un Año Y Dos Meses Que Ya Estamos Juntos 💖</h1>
+    <div id="contador"></div>
+  </header>
+
+  <footer>
+    <button onclick="lanzarFuegos()">🎆 Celebrar 🎆</button>
+    <canvas id="fuegosCanvas"></canvas>
+  </footer>
+
+  <section id="pregunta">
+  <h2>💘 ¿Quieres estar conmigo para siempre y seguir cumpliendo sigue meses y despues años mi chiquita hermosa 😑 trata de precionar el NO si puedes jejeje😂🤣?</h2>
+  <div class="botones">
+    <button id="btn-si" onclick="responderSi()">Sí 💖</button>
+    <button id="btn-no">No 😢</button>
+  </div>
+  <p id="respuesta"></p>
+</section>
+  <section id="mensajes">
+
+    <h2>💌 Mensajes Para Mi Niña Hermosa</h2>
+    <button onclick="mostrarMensaje()">Descubre un mensaje</button>
+    <p id="mensajeMostrado"></p>
+  </section>
+
+  <section id="galeria">
+    <h2>📸 Nuestros Recuerdos</h2>
+    <div class="imagenes">
+      <img src="img1.jpg" alt="Recuerdo 1">
+      <img src="img2.jpg" alt="Recuerdo 2">
+      <img src="img3.jpg" alt="Recuerdo 3">
+      <img src="img4.jpg" alt="Recuerdo 4">
+      <img src="img5.jpg" alt="Recuerdo 5">
+      <img src="img6.jpg" alt="Recuerdo 6">
+      <img src="img7.jpg" alt="Recuerdo 7">
+      <img src="img8.jpg" alt="Recuerdo 8">
+    </div>
+  </section>
+
+  <section id="rompecabezas">
+    <h2>🧩 Nuestro Recuerdo Especial</h2>
+    <div id="puzzle-container"></div>
+    <p id="mensaje-final" class="oculto">Lo conseguiste mi amor es un recuerdo que tenemos. ¡Te Amo Muchísimo! 💖</p>
+  </section>
+
+  <section id="tarjetas">
+    <h2>🎁 Promesas para Ti</h2>
+    <div class="tarjeta" onclick="voltear(this)">
+      <div class="cara frente">Prometo escucharte siempre</div>
+      <div class="cara reverso">Incluso cuando no digas nada 💖</div>
+    </div>
+    <div class="tarjeta" onclick="voltear(this)">
+      <div class="cara frente">Prometo sorprenderte cada aniversario</div>
+      <div class="cara reverso">Con detalles que te hagan sonreír 🌟</div>
+    </div>
+    <div class="tarjeta" onclick="voltear(this)">
+      <div class="cara frente">Prometo amarte cada día más</div>
+      <div class="cara reverso">Porque eres mi todo 💌</div>
+    </div>
+  </section>
+
+  <section id="musica">
+    <h2>🎶 Nuestra Canción</h2>
+    <audio controls>
+      <source src="amor de cine.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+  </section>
+
+  <section id="musica">
+    <h2>🎶 Mi Cancion para Ti</h2>
+    <audio controls>
+      <source src="Júrame.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>

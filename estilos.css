@@ -1,0 +1,209 @@
+/* 🌈 Fondo y tipografía */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #ffdee9, #b5fffc);
+  text-align: center;
+  padding: 20px;
+  animation: aparecer 1s ease-in;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 💖 Títulos */
+h1, h2 {
+  color: #ff007f;
+  text-shadow: 1px 1px 2px #fff;
+}
+
+/* 🕒 Contador */
+#contador {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #ff4da6;
+}
+
+/* 🎀 Botones */
+button {
+  padding: 10px 20px;
+  background: linear-gradient(to right, #ff4da6, #ff85c1);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 10px;
+  box-shadow: 0 4px 10px rgba(255, 77, 166, 0.4);
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* 📸 Galería */
+.imagenes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.imagenes img {
+  width: 160px;
+  margin: 15px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease;
+}
+
+.imagenes img:hover {
+  transform: scale(1.40) rotate(10deg);
+}
+
+/* 💌 Mensajes */
+#mensajeMostrado {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ff85c1;
+  animation: parpadeo 1s infinite alternate;
+  font-size: 1.1em;
+  color: #ff007f;
+  margin-top: 15px;
+}
+
+@keyframes parpadeo {
+  from { opacity: 0.8; }
+  to { opacity: 1; }
+}
+
+/* 🧩 Rompecabezas */
+#puzzle-container {
+  width: 300px;
+  height: 300px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2px;
+  margin: 0 auto;
+  border: 2px solid #ff007f;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.pieza {
+  width: 100%;
+  height: 100%;
+  background-image: url('img8.jpg'); /* Cambia por tu imagen */
+  background-size: 300px 300px;
+  cursor: grab;
+}
+
+.oculto {
+  display: none;
+  font-size: 1.2em;
+  color: #ff007f;
+  margin-top: 20px;
+}
+
+/* 🎁 Tarjetas con efecto 3D */
+.tarjeta {
+  display: inline-block;
+  width: 200px;
+  height: 120px;
+  margin: 10px;
+  perspective: 1000px;
+  position: relative;
+  cursor: pointer;
+}
+
+.cara {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  transition: transform 0.6s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1em;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.frente {
+  background-color: #fff0f5;
+  color: #ff007f;
+}
+
+.reverso {
+  background-color: #ffccdd;
+  color: #fff;
+  transform: rotateY(180deg);
+}
+
+.tarjeta.volteada .frente {
+  transform: rotateY(180deg);
+}
+
+.tarjeta.volteada .reverso {
+  transform: rotateY(360deg);
+}
+
+/* 🎆 Fuegos artificiales y confeti */
+#fuegosCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+}
+
+#pregunta {
+  margin-top: 40px;
+}
+
+.botones {
+  position: relative;
+  height: 100px;
+}
+
+#btn-si, #btn-no {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  position: absolute;
+}
+
+#btn-si {
+  background-color: #ff4da6;
+  color: white;
+  left: 30%;
+}
+
+#btn-no {
+  background-color: #ccc;
+  color: #333;
+  left: 60%;
+  transition: top 0.3s, left 0.3s;
+}
+
+.botones {
+  position: relative; /* Esto permite que los botones se posicionen dentro */
+  height: 100px;
+}
+
+#btn-no {
+  position: absolute; /* Esto permite moverlo con left/top */
+  left: 60%;
+  top: 0;
+  transition: top 0.3s, left 0.3s;
+}
