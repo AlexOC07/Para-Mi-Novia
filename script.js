@@ -32,38 +32,53 @@ function mostrarMensaje() {
 const container = document.getElementById("puzzle-container");
 const mensajeFinal = document.getElementById("mensaje-final");
 let piezas = [];
+let seleccionada = null;
 
+// Crear piezas
 for (let i = 0; i < 9; i++) {
   const div = document.createElement("div");
   div.classList.add("pieza");
-  div.setAttribute("draggable", true);
   div.dataset.pos = i;
   div.style.backgroundPosition = `${-(i % 3) * 100}px ${-Math.floor(i / 3) * 100}px`;
   piezas.push(div);
 }
 
+// Mezclar y mostrar
 piezas.sort(() => Math.random() - 0.5);
 piezas.forEach(p => container.appendChild(p));
 
-let dragged;
-container.addEventListener("dragstart", e => {
-  dragged = e.target;
-});
-container.addEventListener("dragover", e => {
-  e.preventDefault();
-});
-container.addEventListener("drop", e => {
-  e.preventDefault();
-  if (e.target.classList.contains("pieza")) {
-    const from = dragged;
-    const to = e.target;
-    const temp = document.createElement("div");
-    container.replaceChild(temp, from);
-    container.replaceChild(from, to);
-    container.replaceChild(to, temp);
+// Interacción por toque o clic
+container.addEventListener("click", e => {
+  const pieza = e.target;
+  if (!pieza.classList.contains("pieza")) return;
+
+  if (!seleccionada) {
+    seleccionada = pieza;
+    pieza.style.outline = "2px solid #ff007f";
+  } else {
+    intercambiar(seleccionada, pieza);
+    seleccionada.style.outline = "none";
+    seleccionada = null;
     verificarPuzzle();
   }
 });
+
+function intercambiar(p1, p2) {
+  const temp = document.createElement("div");
+  container.replaceChild(temp, p1);
+  container.replaceChild(p1, p2);
+  container.replaceChild(p2, temp);
+}
+
+function verificarPuzzle() {
+  const piezasActuales = Array.from(container.children);
+  const correcto = piezasActuales.every((pieza, index) => pieza.dataset.pos == index);
+  if (correcto) {
+    mensajeFinal.classList.remove("oculto");
+    lanzarConfeti();
+    new Audio("victoria.mp3").play();
+  }
+}
 
 function verificarPuzzle() {
   const piezasActuales = Array.from(container.children);
